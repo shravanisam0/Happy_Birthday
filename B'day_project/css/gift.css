@@ -1,0 +1,298 @@
+/* ============================================
+   GIFT.CSS — Hand-Drawn Gift Box
+   ============================================ */
+
+.gift-page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: calc(80px + var(--space-xl)) var(--space-md) var(--space-2xl);
+  text-align: center;
+}
+
+.gift-header {
+  margin-bottom: var(--space-xl);
+}
+
+.gift-header h1 {
+  font-family: 'Kalam', cursive;
+  font-weight: 700;
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  margin-bottom: var(--space-xs);
+  color: var(--fg);
+}
+
+.gift-header p {
+  color: rgba(45, 45, 45, 0.6);
+  font-size: 1.15rem;
+  font-family: 'Patrick Hand', cursive;
+}
+
+/* ---------- Gift Box (Hand-Drawn) ---------- */
+.gift-box-wrapper {
+  position: relative;
+  width: 240px;
+  height: 280px;
+  cursor: pointer;
+  margin: 0 auto var(--space-xl);
+  perspective: 800px;
+}
+
+.gift-box {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  animation: giftShake 4s ease-in-out infinite;
+  transition: all 0.5s ease;
+}
+
+.gift-box-wrapper:hover .gift-box {
+  animation: none;
+  transform: scale(1.04) rotate(-2deg);
+}
+
+/* Box body — flat color with thick border and cross pattern */
+.gift-body {
+  position: absolute;
+  bottom: 0;
+  left: 10px;
+  right: 10px;
+  height: 170px;
+  background: #b3c6ff;
+  border: 3px solid var(--border);
+  border-radius: var(--radius-wobbly-sm);
+  overflow: hidden;
+}
+
+/* Vertical ribbon */
+.gift-body::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 24px;
+  height: 100%;
+  background: var(--postit);
+  border-left: 2px dashed var(--border);
+  border-right: 2px dashed var(--border);
+}
+
+/* Horizontal ribbon */
+.gift-body::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  width: 100%;
+  height: 24px;
+  background: var(--postit);
+  border-top: 2px dashed var(--border);
+  border-bottom: 2px dashed var(--border);
+}
+
+/* Box lid */
+.gift-lid {
+  position: absolute;
+  bottom: 160px;
+  left: 0;
+  right: 0;
+  height: 45px;
+  background: #99b3ff;
+  border: 3px solid var(--border);
+  border-radius: var(--radius-wobbly-sm);
+  transform-origin: bottom center;
+  transition: transform 0.7s var(--ease-spring);
+  z-index: 2;
+}
+
+/* Lid ribbon */
+.gift-lid::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 24px;
+  height: 100%;
+  background: var(--postit);
+  border-left: 2px dashed var(--border);
+  border-right: 2px dashed var(--border);
+}
+
+/* Ribbon bow — wobbly circles */
+.gift-bow {
+  position: absolute;
+  bottom: 196px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 70px;
+  height: 45px;
+  z-index: 3;
+  transition: transform 0.7s var(--ease-spring);
+}
+
+.gift-bow::before,
+.gift-bow::after {
+  content: '';
+  position: absolute;
+  width: 34px;
+  height: 30px;
+  border-radius: 50%;
+  background: var(--postit);
+  border: 3px solid var(--border);
+  top: 8px;
+}
+
+.gift-bow::before {
+  left: 0;
+  transform: rotate(-15deg);
+}
+
+.gift-bow::after {
+  right: 0;
+  transform: rotate(15deg);
+}
+
+.gift-bow-center {
+  position: absolute;
+  top: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: var(--accent);
+  border: 3px solid var(--border);
+  z-index: 4;
+  box-shadow: 2px 2px 0px var(--border);
+}
+
+/* Click hint */
+.gift-click-hint {
+  color: rgba(45, 45, 45, 0.4);
+  font-size: 1rem;
+  font-family: 'Patrick Hand', cursive;
+  animation: pulse 2s ease-in-out infinite;
+  transition: opacity 0.3s ease;
+}
+
+/* ---------- Opened State ---------- */
+.gift-box-wrapper.opened .gift-lid {
+  transform: rotateX(-120deg) translateY(-30px);
+}
+
+.gift-box-wrapper.opened .gift-bow {
+  transform: translateX(-50%) translateY(-35px) scale(0.5);
+  opacity: 0;
+}
+
+.gift-box-wrapper.opened .gift-box {
+  animation: none !important;
+}
+
+/* ---------- Surprise Content ---------- */
+.gift-surprise {
+  max-width: 600px;
+  width: 100%;
+  padding: var(--space-xl) var(--space-lg);
+  display: none;
+  margin-top: var(--space-lg);
+  background: var(--white);
+  border: 3px solid var(--border);
+  border-radius: var(--radius-wobbly-md);
+  box-shadow: var(--shadow-hard);
+}
+
+.gift-surprise.revealed {
+  display: block;
+  animation: paperUnfold 0.7s var(--ease-spring) forwards;
+}
+
+.gift-surprise .surprise-emoji {
+  font-size: 3rem;
+  margin-bottom: var(--space-sm);
+  display: inline-block;
+  animation: bounceGentle 2s ease-in-out infinite;
+}
+
+.gift-surprise .surprise-title {
+  font-family: 'Kalam', cursive;
+  font-weight: 700;
+  font-size: 2rem;
+  margin-bottom: var(--space-sm);
+  color: var(--accent);
+}
+
+.gift-surprise .surprise-message {
+  font-family: 'Patrick Hand', cursive;
+  font-size: 1.15rem;
+  line-height: 1.7;
+  color: var(--fg);
+  margin-bottom: var(--space-md);
+}
+
+/* Voucher — hand-drawn ticket */
+.gift-surprise .surprise-voucher {
+  padding: var(--space-md);
+  border: 3px dashed var(--accent);
+  border-radius: var(--radius-wobbly-sm);
+  margin: var(--space-md) 0;
+  background: var(--postit);
+  box-shadow: var(--shadow-hard-sm);
+  position: relative;
+}
+
+/* Ticket notch decorations */
+.gift-surprise .surprise-voucher::before,
+.gift-surprise .surprise-voucher::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 16px;
+  height: 16px;
+  background: var(--bg);
+  border: 3px dashed var(--accent);
+  border-radius: 50%;
+}
+
+.gift-surprise .surprise-voucher::before { left: -10px; }
+.gift-surprise .surprise-voucher::after { right: -10px; }
+
+.gift-surprise .voucher-label {
+  font-size: 0.9rem;
+  color: rgba(45, 45, 45, 0.5);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: var(--space-xs);
+  font-family: 'Patrick Hand', cursive;
+}
+
+.gift-surprise .voucher-value {
+  font-family: 'Kalam', cursive;
+  font-weight: 700;
+  font-size: 1.5rem;
+  color: var(--accent);
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 768px) {
+  .gift-box-wrapper {
+    transform: scale(0.85);
+  }
+}
+
+@media (max-width: 480px) {
+  .gift-box-wrapper {
+    transform: scale(0.7);
+  }
+
+  .gift-surprise {
+    padding: var(--space-md);
+  }
+}

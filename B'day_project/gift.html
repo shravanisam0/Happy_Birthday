@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="A special gift wrapped just for you — click to unwrap the surprise!">
+  <title>🎁 Your Gift</title>
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/gift.css">
+</head>
+
+<body>
+
+  <!-- Page Transition -->
+  <div class="page-transition-overlay"></div>
+
+  <!-- Doodle Canvas -->
+  <canvas id="doodle-canvas"></canvas>
+
+  <!-- Navigation -->
+  <nav class="main-nav">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">
+        <span class="logo-icon">🎂</span>
+        <span>Birthday</span>
+      </a>
+      <div class="nav-links">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="message.html" class="nav-link">Message</a>
+        <a href="gallery.html" class="nav-link">Memories</a>
+        <a href="reasons.html" class="nav-link">Reasons</a>
+        <a href="gift.html" class="nav-link active">Gift</a>
+        <a href="celebration.html" class="nav-link">Celebrate</a>
+      </div>
+      <button class="hamburger" aria-label="Toggle navigation menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile Nav -->
+  <div class="mobile-nav-overlay">
+    <a href="index.html" class="nav-link">🏠 Home</a>
+    <a href="message.html" class="nav-link">💌 Message</a>
+    <a href="gallery.html" class="nav-link">📸 Memories</a>
+    <a href="reasons.html" class="nav-link">💝 Reasons</a>
+    <a href="gift.html" class="nav-link">🎁 Gift</a>
+    <a href="celebration.html" class="nav-link">🎉 Celebrate</a>
+  </div>
+
+  <!-- Gift Page -->
+  <main class="gift-page">
+    <div class="gift-header">
+      <h1>A Special Gift For You 🎁</h1>
+      <p>Something wrapped with love is waiting — click to open!</p>
+    </div>
+
+    <!-- Gift Box -->
+    <div class="gift-box-wrapper" role="button" tabindex="0" aria-label="Click to open your gift">
+      <div class="gift-box">
+        <div class="gift-bow">
+          <div class="gift-bow-center"></div>
+        </div>
+        <div class="gift-lid"></div>
+        <div class="gift-body"></div>
+      </div>
+    </div>
+
+    <p class="gift-click-hint">🎀 Click the gift to unwrap it!</p>
+
+    <!-- Surprise Content (hidden until opened) -->
+    <div class="gift-surprise">
+      <div class="surprise-emoji">🎉</div>
+      <h2 class="surprise-title">Surprise!</h2>
+      <p class="surprise-message">
+        This isn’t just a gift, it’s my way of saying I’ll always be here
+        — hyping you up, picking you up, and loving every little thing that makes you amazing. You’re one of a kind, the
+        most extraordinary person I know, and today is a
+        beautiful reminder of how lucky the world is to have you in it.
+      </p>
+
+      <div class="surprise-voucher">
+        <div class="voucher-label">🎫 Special Birthday Voucher</div>
+        <div class="voucher-value">One Day of Anything You Want</div>
+        <p class="caption-text" style="margin-top: var(--space-xs);">Valid forever • No limits • Redeemable anytime with
+          love</p>
+      </div>
+
+      <p class="caption-text" style="font-style: italic; margin-top: var(--space-sm);">
+        P.S. I miss u a looottt😭 It's been soo long we've last seen each other.
+      </p>
+    </div>
+
+    <!-- Navigation -->
+    <div
+      style="margin-top: var(--space-xl); display: flex; gap: var(--space-md); flex-wrap: wrap; justify-content: center;">
+      <a href="reasons.html" class="btn btn-secondary btn-sm">← Reasons</a>
+      <a href="celebration.html" class="btn btn-primary btn-sm">Next: Grand Finale →</a>
+    </div>
+  </main>
+
+  <script src="js/particles.js"></script>
+  <script src="js/navigation.js"></script>
+  <script src="js/gift.js"></script>
+</body>
+
+</html>

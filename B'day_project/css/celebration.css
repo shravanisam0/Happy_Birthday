@@ -1,0 +1,204 @@
+/* ============================================
+   CELEBRATION.CSS — Hand-Drawn Grand Finale
+   ============================================ */
+
+.celebration-page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-xl) var(--space-md);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+/* ---------- Hero Message ---------- */
+.celebration-hero {
+  margin-bottom: var(--space-xl);
+  position: relative;
+  z-index: var(--z-content);
+}
+
+.celebration-hero .celebration-emoji {
+  font-size: 5rem;
+  display: inline-block;
+  animation: bounceGentle 2s ease-in-out infinite;
+  margin-bottom: var(--space-md);
+}
+
+.celebration-hero h1 {
+  font-family: 'Kalam', cursive;
+  font-weight: 700;
+  font-size: clamp(2.2rem, 6vw, 4rem);
+  line-height: 1.2;
+  max-width: 700px;
+  margin-bottom: var(--space-md);
+  color: var(--fg);
+}
+
+.celebration-hero h1 .word {
+  display: inline-block;
+  opacity: 0;
+  animation: fadeInUp 0.4s ease forwards;
+}
+
+.celebration-hero .celebration-subtitle {
+  font-family: 'Kalam', cursive;
+  font-weight: 700;
+  font-size: clamp(1.2rem, 3vw, 1.8rem);
+  color: var(--accent);
+  text-decoration: underline wavy var(--accent);
+  text-underline-offset: 6px;
+  text-decoration-thickness: 2px;
+}
+
+/* ---------- Birthday Cat Image ---------- */
+.birthday-cat-container {
+  margin-top: var(--space-lg);
+  display: flex;
+  justify-content: center;
+  animation: floatCat 3s ease-in-out infinite;
+  isolation: isolate;
+}
+
+.birthday-cat-img {
+  max-width: 320px;
+  width: 80%;
+  height: auto;
+  mix-blend-mode: multiply;
+  border-radius: 18px;
+  transition: transform 0.3s ease;
+}
+
+.birthday-cat-img:hover {
+  transform: scale(1.05) rotate(-2deg);
+}
+
+@keyframes floatCat {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-12px); }
+}
+
+/* ---------- Countdown (Sketch Style) ---------- */
+.countdown-section {
+  margin-bottom: var(--space-xl);
+  position: relative;
+  z-index: var(--z-content);
+}
+
+.countdown-title {
+  font-family: 'Patrick Hand', cursive;
+  font-size: 1.1rem;
+  color: rgba(45, 45, 45, 0.5);
+  margin-bottom: var(--space-md);
+}
+
+.countdown-grid {
+  display: flex;
+  gap: var(--space-md);
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.countdown-item {
+  padding: var(--space-md) var(--space-lg);
+  min-width: 100px;
+  background: var(--white);
+  border: 3px solid var(--border);
+  border-radius: var(--radius-wobbly-sm);
+  box-shadow: var(--shadow-hard);
+}
+
+/* Each countdown item gets a slightly different rotation for hand-drawn feel */
+.countdown-item:nth-child(1) { transform: rotate(-2deg); }
+.countdown-item:nth-child(2) { transform: rotate(1deg); }
+.countdown-item:nth-child(3) { transform: rotate(-1deg); }
+.countdown-item:nth-child(4) { transform: rotate(2deg); }
+
+.countdown-value {
+  font-family: 'Kalam', cursive;
+  font-weight: 700;
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  line-height: 1;
+  margin-bottom: var(--space-2xs);
+  color: var(--fg);
+}
+
+.countdown-item:nth-child(1) .countdown-value { color: var(--accent); }
+.countdown-item:nth-child(2) .countdown-value { color: var(--accent-blue); }
+.countdown-item:nth-child(3) .countdown-value { color: #2d8a4e; }
+.countdown-item:nth-child(4) .countdown-value { color: #b35900; }
+
+.countdown-label {
+  font-size: 0.9rem;
+  color: rgba(45, 45, 45, 0.5);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-family: 'Patrick Hand', cursive;
+}
+
+/* ---------- Action Buttons ---------- */
+.celebration-actions {
+  display: flex;
+  gap: var(--space-md);
+  flex-wrap: wrap;
+  justify-content: center;
+  position: relative;
+  z-index: var(--z-content);
+}
+
+/* ---------- Doodle Hearts ---------- */
+.doodle-hearts {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: var(--z-doodles);
+  overflow: hidden;
+}
+
+.doodle-heart {
+  position: absolute;
+  font-size: 1.5rem;
+  color: var(--accent);
+  opacity: 0;
+  animation: floatHeart 8s ease-in-out infinite;
+  /* Use a hand-drawn style — thick outline */
+  -webkit-text-stroke: 2px var(--border);
+  paint-order: stroke fill;
+}
+
+.doodle-heart:nth-child(1) { left: 5%;  animation-delay: 0s;   font-size: 1.2rem; }
+.doodle-heart:nth-child(2) { left: 15%; animation-delay: 1.5s; font-size: 1.8rem; }
+.doodle-heart:nth-child(3) { left: 30%; animation-delay: 3s;   font-size: 1rem; }
+.doodle-heart:nth-child(4) { left: 45%; animation-delay: 0.8s; font-size: 1.4rem; }
+.doodle-heart:nth-child(5) { left: 60%; animation-delay: 2.5s; font-size: 1.6rem; }
+.doodle-heart:nth-child(6) { left: 72%; animation-delay: 4s;   font-size: 1.2rem; }
+.doodle-heart:nth-child(7) { left: 82%; animation-delay: 1s;   font-size: 1.8rem; }
+.doodle-heart:nth-child(8) { left: 92%; animation-delay: 3.5s; font-size: 1.3rem; }
+
+/* ---------- Responsive ---------- */
+@media (max-width: 768px) {
+  .countdown-grid {
+    gap: var(--space-sm);
+  }
+
+  .countdown-item {
+    padding: var(--space-sm) var(--space-md);
+    min-width: 85px;
+  }
+}
+
+@media (max-width: 480px) {
+  .countdown-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-sm);
+  }
+
+  .celebration-actions {
+    flex-direction: column;
+    align-items: center;
+  }
+}

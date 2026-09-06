@@ -1,0 +1,386 @@
+/* ============================================
+   MESSAGE.CSS — Hand-Drawn Birthday Message
+   ============================================ */
+
+/* ---------- Letter Section ---------- */
+.message-page {
+  min-height: 100vh;
+  padding: calc(80px + var(--space-xl)) var(--space-md) var(--space-2xl);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.letter-card {
+  max-width: 700px;
+  width: 100%;
+  padding: var(--space-xl) var(--space-lg);
+  padding-left: calc(var(--space-lg) + 30px); /* Room for margin line */
+  position: relative;
+  margin-bottom: var(--space-xl);
+  background: var(--white);
+  border: 3px solid var(--border);
+  border-radius: var(--radius-wobbly-md);
+  box-shadow: var(--shadow-hard);
+
+  /* Ruled paper lines */
+  background-image:
+    linear-gradient(transparent, transparent 31px, rgba(45, 93, 161, 0.12) 31px, rgba(45, 93, 161, 0.12) 32px);
+  background-size: 100% 32px;
+  background-color: var(--white);
+}
+
+/* Red margin line */
+.letter-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 40px;
+  bottom: 0;
+  width: 2px;
+  background: rgba(255, 77, 77, 0.3);
+  z-index: 1;
+}
+
+/* Tape decorations */
+.letter-tape {
+  position: absolute;
+  width: 70px;
+  height: 22px;
+  background: rgba(200, 200, 190, 0.55);
+  border-radius: 2px;
+  z-index: 3;
+}
+
+.letter-tape-left {
+  top: -8px;
+  left: 30px;
+  transform: rotate(-5deg);
+}
+
+.letter-tape-right {
+  top: -8px;
+  right: 30px;
+  transform: rotate(3deg);
+}
+
+.letter-header {
+  text-align: center;
+  margin-bottom: var(--space-lg);
+  position: relative;
+  z-index: 2;
+}
+
+.letter-header h1 {
+  font-family: 'Kalam', cursive;
+  font-weight: 700;
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
+  margin-bottom: var(--space-xs);
+  color: var(--accent);
+}
+
+.letter-date {
+  font-family: 'Patrick Hand', cursive;
+  color: var(--accent-blue);
+  font-size: 1.1rem;
+}
+
+.letter-body {
+  font-family: 'Patrick Hand', cursive;
+  font-size: 1.15rem;
+  line-height: 2;
+  color: var(--fg);
+  position: relative;
+  z-index: 2;
+}
+
+.letter-line {
+  opacity: 0;
+  margin-bottom: var(--space-sm);
+}
+
+.letter-line.visible {
+  opacity: 1;
+  animation: fadeInUp 0.5s ease forwards;
+}
+
+.letter-signature {
+  font-family: 'Kalam', cursive;
+  font-weight: 700;
+  font-size: 1.5rem;
+  color: var(--accent);
+  text-align: right;
+  margin-top: var(--space-md);
+  opacity: 0;
+  position: relative;
+  z-index: 2;
+}
+
+.letter-signature.visible {
+  animation: fadeInUp 0.6s ease forwards;
+}
+
+/* ---------- Hidden Message ---------- */
+.hidden-message-container {
+  text-align: center;
+  margin-top: var(--space-md);
+}
+
+.hidden-message {
+  max-width: 700px;
+  margin: var(--space-md) auto 0;
+  padding: var(--space-md) var(--space-lg);
+  border: 3px dashed var(--accent);
+  border-radius: var(--radius-wobbly-sm);
+  background: var(--postit);
+  text-align: center;
+  display: none;
+  box-shadow: var(--shadow-hard-sm);
+}
+
+.hidden-message.revealed {
+  display: block;
+  animation: paperUnfold 0.6s var(--ease-spring) forwards;
+}
+
+.hidden-message p {
+  font-family: 'Kalam', cursive;
+  font-weight: 700;
+  font-size: 1.3rem;
+  color: var(--fg);
+  line-height: 1.6;
+}
+
+/* ---------- Birthday Cake ---------- */
+.cake-section {
+  text-align: center;
+  margin: var(--space-xl) 0;
+}
+
+.cake-section h2 {
+  font-family: 'Kalam', cursive;
+  margin-bottom: var(--space-md);
+  color: var(--fg);
+}
+
+.cake-container {
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+}
+
+.cake {
+  position: relative;
+  width: 240px;
+  margin: 0 auto;
+}
+
+/* Cake layers — sketched flat style */
+.cake-layer {
+  position: relative;
+  margin: 0 auto;
+  border: 3px solid var(--border);
+}
+
+.cake-layer-1 {
+  width: 240px;
+  height: 55px;
+  background: #ffb3b3;
+  border-radius: 0 0 8px 8px;
+}
+
+.cake-layer-2 {
+  width: 200px;
+  height: 45px;
+  background: #b3c6ff;
+  border-radius: 4px;
+  margin: 0 auto;
+}
+
+.cake-layer-3 {
+  width: 160px;
+  height: 40px;
+  background: var(--postit);
+  border-radius: 4px 4px 0 0;
+  margin: 0 auto;
+}
+
+/* Frosting — dashed line */
+.cake-layer-1::before,
+.cake-layer-2::before {
+  content: '';
+  position: absolute;
+  top: -4px;
+  left: 8%;
+  right: 8%;
+  height: 0;
+  border-top: 3px dashed var(--white);
+}
+
+/* Cake plate */
+.cake-plate {
+  width: 280px;
+  height: 12px;
+  background: var(--muted);
+  border: 2px solid var(--border);
+  border-radius: 0 0 50% 50% / 0 0 100% 100%;
+  margin: 0 auto;
+}
+
+/* Candles — pencil stick style */
+.candles-row {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  position: relative;
+  margin-bottom: -5px;
+  z-index: 2;
+}
+
+.candle {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform var(--transition-fast);
+}
+
+.candle-stick {
+  width: 8px;
+  height: 32px;
+  border: 2px solid var(--border);
+  border-radius: 2px;
+  position: relative;
+}
+
+.candle:nth-child(1) .candle-stick { background: #ffb3b3; }
+.candle:nth-child(2) .candle-stick { background: #b3c6ff; }
+.candle:nth-child(3) .candle-stick { background: var(--postit); }
+.candle:nth-child(4) .candle-stick { background: #b3e6d4; }
+.candle:nth-child(5) .candle-stick { background: #e6b3ff; }
+
+/* Flame — teardrop with wobble */
+.candle-flame {
+  width: 14px;
+  height: 18px;
+  background: #FFD54F;
+  border: 2px solid var(--border);
+  border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+  margin-bottom: 2px;
+  animation: candleFlicker 0.8s ease-in-out infinite;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+/* Intense flicker while spacebar is held */
+.candle-flame.blowing {
+  animation: blowFlicker 0.1s ease-in-out infinite;
+}
+
+@keyframes blowFlicker {
+  0%   { transform: rotate(-12deg) scale(1.1); opacity: 0.7; }
+  25%  { transform: rotate(8deg) scale(0.6);  opacity: 0.5; }
+  50%  { transform: rotate(-6deg) scale(0.9);  opacity: 0.8; }
+  75%  { transform: rotate(14deg) scale(0.5); opacity: 0.4; }
+  100% { transform: rotate(-10deg) scale(1.0); opacity: 0.6; }
+}
+
+.candle-flame.blown-out {
+  animation: none;
+  opacity: 0;
+  transform: scale(0);
+}
+
+.candle-smoke {
+  width: 6px;
+  height: 6px;
+  background: rgba(45, 45, 45, 0.25);
+  border-radius: 50%;
+  opacity: 0;
+  position: absolute;
+  top: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.candle-smoke.active {
+  animation: smokeRise 1s ease-out forwards;
+}
+
+/* Wish message */
+.wish-message {
+  margin-top: var(--space-lg);
+  font-family: 'Kalam', cursive;
+  font-weight: 700;
+  font-size: 2rem;
+  color: var(--accent);
+  opacity: 0;
+  transition: opacity 0.6s ease;
+}
+
+.wish-message.visible {
+  opacity: 1;
+  animation: bounceIn 0.6s var(--ease-spring) forwards;
+}
+
+.cake-instruction {
+  color: rgba(45, 45, 45, 0.5);
+  font-size: 1rem;
+  margin-top: var(--space-sm);
+  font-family: 'Patrick Hand', cursive;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+.cake-instruction kbd {
+  display: inline-block;
+  padding: 2px 8px;
+  font-family: 'Patrick Hand', cursive;
+  font-size: 0.95rem;
+  background: var(--white);
+  border: 2px solid var(--border);
+  border-radius: 4px;
+  box-shadow: 1px 2px 0 var(--border);
+}
+
+.cake-instruction.hidden {
+  display: none;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 768px) {
+  .letter-card {
+    padding: var(--space-lg) var(--space-md);
+    padding-left: calc(var(--space-md) + 25px);
+  }
+
+  .letter-card::before {
+    left: 30px;
+  }
+
+  .cake {
+    transform: scale(0.85);
+  }
+}
+
+@media (max-width: 480px) {
+  .letter-card {
+    padding: var(--space-md) var(--space-sm);
+    padding-left: calc(var(--space-sm) + 20px);
+  }
+
+  .letter-card::before {
+    left: 22px;
+  }
+
+  .letter-tape {
+    width: 50px;
+    height: 16px;
+  }
+
+  .cake {
+    transform: scale(0.7);
+  }
+
+  .candles-row {
+    gap: 18px;
+  }
+}

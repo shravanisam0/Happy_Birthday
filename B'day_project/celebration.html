@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+    content="The grand birthday celebration — fireworks, confetti, and a heartfelt message for you!">
+  <title>🎉 Happy Birthday Celebration!</title>
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/celebration.css">
+</head>
+
+<body>
+
+  <!-- Page Transition -->
+  <div class="page-transition-overlay"></div>
+
+  <!-- Doodle Canvas -->
+  <canvas id="doodle-canvas"></canvas>
+
+  <!-- Doodle Hearts (replacing floating hearts) -->
+  <div class="doodle-hearts" aria-hidden="true">
+    <span class="doodle-heart">♥</span>
+    <span class="doodle-heart">♥</span>
+    <span class="doodle-heart">♥</span>
+    <span class="doodle-heart">♥</span>
+    <span class="doodle-heart">♥</span>
+    <span class="doodle-heart">♥</span>
+    <span class="doodle-heart">♥</span>
+    <span class="doodle-heart">♥</span>
+  </div>
+
+  <!-- Navigation -->
+  <nav class="main-nav">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">
+        <span class="logo-icon">🎂</span>
+        <span>Birthday</span>
+      </a>
+      <div class="nav-links">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="message.html" class="nav-link">Message</a>
+        <a href="gallery.html" class="nav-link">Memories</a>
+        <a href="reasons.html" class="nav-link">Reasons</a>
+        <a href="gift.html" class="nav-link">Gift</a>
+        <a href="celebration.html" class="nav-link active">Celebrate</a>
+      </div>
+      <button class="hamburger" aria-label="Toggle navigation menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile Nav -->
+  <div class="mobile-nav-overlay">
+    <a href="index.html" class="nav-link">🏠 Home</a>
+    <a href="message.html" class="nav-link">💌 Message</a>
+    <a href="gallery.html" class="nav-link">📸 Memories</a>
+    <a href="reasons.html" class="nav-link">💝 Reasons</a>
+    <a href="gift.html" class="nav-link">🎁 Gift</a>
+    <a href="celebration.html" class="nav-link">🎉 Celebrate</a>
+  </div>
+
+  <!-- Celebration Page -->
+  <main class="celebration-page">
+    <!-- Hero Message -->
+    <div class="celebration-hero">
+      <div class="celebration-emoji">🎉</div>
+      <h1>
+        <span class="word">Here's</span>
+        <span class="word">to</span>
+        <span class="word">another</span>
+        <span class="word">beautiful</span>
+        <span class="word">year</span>
+        <span class="word">of</span>
+        <span class="word">you!</span>
+        <span class="word">🎂</span>
+      </h1>
+      <p class="celebration-subtitle">
+        May every day be as wonderful as you are 💖
+      </p>
+      <div class="birthday-cat-container">
+        <img src="images/birthday_cat.jpg" alt="Cute birthday cat with party hat, balloons, roses, and cake" class="birthday-cat-img">
+      </div>
+    </div>
+
+    <!-- Countdown -->
+    <!-- <div class="countdown-section">
+      <p class="countdown-title">⏳ Counting down to your birthday...</p>
+      <div class="countdown-grid">
+        <div class="countdown-item">
+          <div class="countdown-value" id="countdown-days">00</div>
+          <div class="countdown-label">Days</div>
+        </div>
+        <div class="countdown-item">
+          <div class="countdown-value" id="countdown-hours">00</div>
+          <div class="countdown-label">Hours</div>
+        </div>
+        <div class="countdown-item">
+          <div class="countdown-value" id="countdown-mins">00</div>
+          <div class="countdown-label">Minutes</div>
+        </div>
+        <div class="countdown-item">
+          <div class="countdown-value" id="countdown-secs">00</div>
+          <div class="countdown-label">Seconds</div>
+        </div>
+      </div>
+    </div> -->
+
+    <!-- Action Buttons -->
+    <div class="celebration-actions">
+      <a href="index.html" class="btn btn-primary">
+        🔄 Replay All Surprises
+      </a>
+      <a href="index.html" class="btn btn-secondary">
+        🏠 Back Home
+      </a>
+    </div>
+  </main>
+
+  <script src="js/particles.js"></script>
+  <script src="js/navigation.js"></script>
+  <script src="js/celebration.js"></script>
+</body>
+
+</html>

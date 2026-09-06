@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="A heartfelt birthday letter and cake with candles to blow out — make a wish!">
+  <title>💌 Birthday Message</title>
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/message.css">
+</head>
+
+<body>
+
+  <!-- Page Transition -->
+  <div class="page-transition-overlay"></div>
+
+  <!-- Doodle Canvas -->
+  <canvas id="doodle-canvas"></canvas>
+
+  <!-- Navigation -->
+  <nav class="main-nav">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">
+        <span class="logo-icon">🎂</span>
+        <span>Birthday</span>
+      </a>
+      <div class="nav-links">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="message.html" class="nav-link active">Message</a>
+        <a href="gallery.html" class="nav-link">Memories</a>
+        <a href="reasons.html" class="nav-link">Reasons</a>
+        <a href="gift.html" class="nav-link">Gift</a>
+        <a href="celebration.html" class="nav-link">Celebrate</a>
+      </div>
+      <button class="hamburger" aria-label="Toggle navigation menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile Nav -->
+  <div class="mobile-nav-overlay">
+    <a href="index.html" class="nav-link">🏠 Home</a>
+    <a href="message.html" class="nav-link">💌 Message</a>
+    <a href="gallery.html" class="nav-link">📸 Memories</a>
+    <a href="reasons.html" class="nav-link">💝 Reasons</a>
+    <a href="gift.html" class="nav-link">🎁 Gift</a>
+    <a href="celebration.html" class="nav-link">🎉 Celebrate</a>
+  </div>
+
+  <!-- Birthday Message Page -->
+  <main class="message-page">
+
+    <!-- Letter -->
+    <div class="letter-card">
+      <!-- Tape decorations -->
+      <div class="letter-tape letter-tape-left" aria-hidden="true"></div>
+      <div class="letter-tape letter-tape-right" aria-hidden="true"></div>
+
+      <div class="letter-header">
+        <h1>A Letter For You 💌</h1>
+        <div class="letter-date">September 7, 2026</div>
+      </div>
+
+      <div class="letter-body">
+        <p class="letter-line">Dear Bestie💝,</p>
+        <p class="letter-line">On this beautiful day, the world became a little brighter because you were born into it.
+          I want you to know just how much you mean to me, and how grateful I am that I met you.</p>
+        <p class="letter-line">Every moment with you is a gift I never want to take for granted. I always wished to have
+          someone who understands and loves me for who I am.
+          And then I met you. There in the classroom. It was an awkward first day of classes. I still remember you
+          sitting next to me but honestly I never imagined us together for those 2 years. TBH I do not regret sitting
+          next to you at all.
+          The secrets we shared , the memories we made are something precious I am gonna keep with myself this lifetime.
+        </p>
+        <p class="letter-line">You have this incredible way of making everyone around you feel special, seen, and loved.
+          It's one of the countless things that make you extraordinary.</p>
+        <p class="letter-line">I hope this year brings you everything your beautiful heart desires — adventures that
+          thrill you, peace that grounds you, and love that surrounds you always.</p>
+        <p class="letter-line">You deserve the world, and I am forever grateful to have you as my friend. 💖</p>
+      </div>
+
+      <div class="letter-signature">
+        Sending hugs, laughs, and all my love — always!✨
+      </div>
+    </div>
+
+    <!-- Birthday Cake -->
+    <div class="cake-section reveal">
+      <h2 class="heading-2">Blow Out Your Candles! 🎂</h2>
+      <p class="cake-instruction">✨ Hold the <kbd>spacebar</kbd> to blow out the candles</p>
+
+      <div class="cake-container">
+        <div class="cake">
+          <!-- Candles -->
+          <div class="candles-row">
+            <div class="candle" aria-label="Candle 1">
+              <div class="candle-flame"></div>
+              <div class="candle-smoke"></div>
+              <div class="candle-stick"></div>
+            </div>
+            <div class="candle" aria-label="Candle 2">
+              <div class="candle-flame"></div>
+              <div class="candle-smoke"></div>
+              <div class="candle-stick"></div>
+            </div>
+            <div class="candle" aria-label="Candle 3">
+              <div class="candle-flame"></div>
+              <div class="candle-smoke"></div>
+              <div class="candle-stick"></div>
+            </div>
+            <div class="candle" aria-label="Candle 4">
+              <div class="candle-flame"></div>
+              <div class="candle-smoke"></div>
+              <div class="candle-stick"></div>
+            </div>
+            <div class="candle" aria-label="Candle 5">
+              <div class="candle-flame"></div>
+              <div class="candle-smoke"></div>
+              <div class="candle-stick"></div>
+            </div>
+          </div>
+
+          <!-- Cake Layers -->
+          <div class="cake-layer cake-layer-3"></div>
+          <div class="cake-layer cake-layer-2"></div>
+          <div class="cake-layer cake-layer-1"></div>
+          <div class="cake-plate"></div>
+        </div>
+
+        <!-- Wish Message -->
+        <div class="wish-message">🌟 Make a Wish! 🌟</div>
+      </div>
+    </div>
+
+    <!-- Hidden Message -->
+    <div class="hidden-message-container reveal">
+      <button id="reveal-hidden-btn" class="btn btn-gold btn-sm">
+        ✨ Reveal one more thing...
+      </button>
+      <div class="hidden-message">
+        <p>You’re the one who makes everything feel lighter — whether it’s me ranting about nonsense or just sitting in
+          silence. Honestly, you’re my safe space and my favorite source of chaos.
+
+          On your birthday, I hope you get spoiled with cake, laughter, and maybe a little mischief (because what’s life
+          without fun trouble?). Thanks for being the person I can always count on — you’re truly my comfort wrapped in
+          joy. Love you loads! 🥳💖</p>
+      </div>
+    </div>
+
+    <!-- Navigation -->
+    <div
+      style="margin-top: var(--space-xl); display: flex; gap: var(--space-md); flex-wrap: wrap; justify-content: center;">
+      <a href="index.html" class="btn btn-secondary btn-sm">← Back Home</a>
+      <a href="gallery.html" class="btn btn-primary btn-sm">Next: Our Memories →</a>
+    </div>
+  </main>
+
+  <script src="js/particles.js"></script>
+  <script src="js/navigation.js"></script>
+  <script src="js/message.js"></script>
+</body>
+
+</html>

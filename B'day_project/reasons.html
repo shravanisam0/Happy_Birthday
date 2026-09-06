@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="All the reasons why you are truly amazing — flip each card to discover more.">
+  <title>💝 Reasons You're Amazing</title>
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/reasons.css">
+</head>
+
+<body>
+
+  <!-- Page Transition -->
+  <div class="page-transition-overlay"></div>
+
+  <!-- Doodle Canvas -->
+  <canvas id="doodle-canvas"></canvas>
+
+  <!-- Navigation -->
+  <nav class="main-nav">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">
+        <span class="logo-icon">🎂</span>
+        <span>Birthday</span>
+      </a>
+      <div class="nav-links">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="message.html" class="nav-link">Message</a>
+        <a href="gallery.html" class="nav-link">Memories</a>
+        <a href="reasons.html" class="nav-link active">Reasons</a>
+        <a href="gift.html" class="nav-link">Gift</a>
+        <a href="celebration.html" class="nav-link">Celebrate</a>
+      </div>
+      <button class="hamburger" aria-label="Toggle navigation menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile Nav -->
+  <div class="mobile-nav-overlay">
+    <a href="index.html" class="nav-link">🏠 Home</a>
+    <a href="message.html" class="nav-link">💌 Message</a>
+    <a href="gallery.html" class="nav-link">📸 Memories</a>
+    <a href="reasons.html" class="nav-link">💝 Reasons</a>
+    <a href="gift.html" class="nav-link">🎁 Gift</a>
+    <a href="celebration.html" class="nav-link">🎉 Celebrate</a>
+  </div>
+
+  <!-- Reasons Page -->
+  <main class="reasons-page">
+    <div class="reasons-header">
+      <h1>Reasons You're Amazing</h1>
+      <p>Click each card to discover what makes you so incredibly special 💫</p>
+    </div>
+
+    <div class="reasons-progress">
+      You've discovered <span class="count">0</span> of <span>10</span> reasons ✨
+    </div>
+
+    <div class="reasons-grid">
+      <!-- Card 1 -->
+      <div class="flip-card" role="button" tabindex="0" aria-label="Flip card to reveal reason 1">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <div class="card-number">#1</div>
+            <div class="card-hint">✨ tap to reveal</div>
+          </div>
+          <div class="flip-card-back">
+            <div class="reason-emoji">✨</div>
+            <p class="reason-text">You always listen to me without judgment.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="flip-card" role="button" tabindex="0" aria-label="Flip card to reveal reason 2">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <div class="card-number">#2</div>
+            <div class="card-hint">✨ tap to reveal</div>
+          </div>
+          <div class="flip-card-back">
+            <div class="reason-emoji">💪</div>
+            <p class="reason-text">Your strength and resilience inspire everyone around you every single day.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="flip-card" role="button" tabindex="0" aria-label="Flip card to reveal reason 3">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <div class="card-number">#3</div>
+            <div class="card-hint">✨ tap to reveal</div>
+          </div>
+          <div class="flip-card-back">
+            <div class="reason-emoji">🎨</div>
+            <p class="reason-text">You make even boring moments feel fun.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 4 -->
+      <div class="flip-card" role="button" tabindex="0" aria-label="Flip card to reveal reason 4">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <div class="card-number">#4</div>
+            <div class="card-hint">✨ tap to reveal</div>
+          </div>
+          <div class="flip-card-back">
+            <div class="reason-emoji">💫</div>
+            <p class="reason-text">You make ordinary moments feel extraordinary just by being there.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 5 -->
+      <div class="flip-card" role="button" tabindex="0" aria-label="Flip card to reveal reason 5">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <div class="card-number">#5</div>
+            <div class="card-hint">✨ tap to reveal</div>
+          </div>
+          <div class="flip-card-back">
+            <div class="reason-emoji">🌻</div>
+            <p class="reason-text">Your kindness is like sunshine — it reaches everyone without effort.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 6 -->
+      <div class="flip-card" role="button" tabindex="0" aria-label="Flip card to reveal reason 6">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <div class="card-number">#6</div>
+            <div class="card-hint">✨ tap to reveal</div>
+          </div>
+          <div class="flip-card-back">
+            <div class="reason-emoji">🎭</div>
+            <p class="reason-text">You celebrate my wins like they’re yours.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 7 -->
+      <div class="flip-card" role="button" tabindex="0" aria-label="Flip card to reveal reason 7">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <div class="card-number">#7</div>
+            <div class="card-hint">✨ tap to reveal</div>
+          </div>
+          <div class="flip-card-back">
+            <div class="reason-emoji">🌙</div>
+            <p class="reason-text">You have an incredible ability to make people feel truly seen and heard.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 8 -->
+      <div class="flip-card" role="button" tabindex="0" aria-label="Flip card to reveal reason 8">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <div class="card-number">#8</div>
+            <div class="card-hint">✨ tap to reveal</div>
+          </div>
+          <div class="flip-card-back">
+            <div class="reason-emoji">🦋</div>
+            <p class="reason-text">You’re my partner-in-chaos and comfort.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 9 -->
+      <div class="flip-card" role="button" tabindex="0" aria-label="Flip card to reveal reason 9">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <div class="card-number">#9</div>
+            <div class="card-hint">✨ tap to reveal</div>
+          </div>
+          <div class="flip-card-back">
+            <div class="reason-emoji">🎶</div>
+            <p class="reason-text">You inspire me to grow every day.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 10 -->
+      <div class="flip-card" role="button" tabindex="0" aria-label="Flip card to reveal reason 10">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <div class="card-number">#10</div>
+            <div class="card-hint">✨ tap to reveal</div>
+          </div>
+          <div class="flip-card-back">
+            <div class="reason-emoji">💝</div>
+            <p class="reason-text">You make me feel seen and valued.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 11 -->
+      <div class="flip-card" role="button" tabindex="0" aria-label="Flip card to reveal reason 10">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <div class="card-number">#11</div>
+            <div class="card-hint">✨ tap to reveal</div>
+          </div>
+          <div class="flip-card-back">
+            <div class="reason-emoji">💝</div>
+            <p class="reason-text">You feel like family — not just a friend</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 12 -->
+      <div class="flip-card" role="button" tabindex="0" aria-label="Flip card to reveal reason 10">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <div class="card-number">#12</div>
+            <div class="card-hint">✨ tap to reveal</div>
+          </div>
+          <div class="flip-card-back">
+            <div class="reason-emoji">💝</div>
+            <p class="reason-text">You’re irreplaceable — my forever bestie.</p>
+          </div>
+        </div>
+      </div>
+
+
+      <!-- Navigation -->
+      <div
+        style="display: flex; gap: var(--space-md); flex-wrap: wrap; justify-content: center; margin-top: var(--space-md); grid-column: 1 / -1;">
+        <a href="gallery.html" class="btn btn-secondary btn-sm">← Our Memories</a>
+        <a href="gift.html" class="btn btn-primary btn-sm">Next: Your Gift →</a>
+      </div>
+  </main>
+
+  <!-- Random Reason FAB -->
+  <div class="random-reason-fab">
+    <button id="random-reason-btn" class="btn btn-primary">✨ Random Reason</button>
+  </div>
+
+  <!-- Random Reason Modal -->
+  <div class="random-modal-overlay">
+    <div class="random-modal-card">
+      <div class="reason-emoji">✨</div>
+      <p class="reason-text">The love you give so freely comes back to you tenfold. You deserve it all.</p>
+      <button class="close-modal-btn">tap anywhere to close</button>
+    </div>
+  </div>
+
+  <script src="js/particles.js"></script>
+  <script src="js/navigation.js"></script>
+  <script src="js/reasons.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,259 @@
+/* ============================================
+   HOME.CSS — Hand-Drawn Welcome / Landing Page
+   ============================================ */
+
+/* ---------- Hero Section ---------- */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: var(--space-2xl) var(--space-md);
+  position: relative;
+}
+
+.hero-content {
+  position: relative;
+  z-index: var(--z-content);
+}
+
+.hero-emoji {
+  font-size: 4.5rem;
+  margin-bottom: var(--space-md);
+  animation: bounceGentle 2s ease-in-out infinite;
+  display: inline-block;
+}
+
+.hero-title {
+  font-family: 'Kalam', cursive;
+  font-weight: 700;
+  font-size: clamp(2.8rem, 7vw, 5.5rem);
+  line-height: 1.15;
+  margin-bottom: var(--space-md);
+  color: var(--fg);
+  animation: fadeInUp 0.8s ease forwards;
+}
+
+.hero-title .name-highlight {
+  color: var(--accent);
+  display: inline-block;
+  text-decoration: underline wavy var(--accent);
+  text-underline-offset: 8px;
+  text-decoration-thickness: 3px;
+}
+
+.hero-title .rotating-mark {
+  display: inline-block;
+  animation: wobble 2s ease-in-out infinite;
+}
+
+.hero-subtitle {
+  font-family: 'Patrick Hand', cursive;
+  font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+  color: var(--fg);
+  max-width: 550px;
+  margin: 0 auto var(--space-lg);
+  line-height: 1.7;
+  opacity: 0;
+  animation: fadeInUp 0.8s ease 0.3s forwards;
+}
+
+.hero-cta {
+  opacity: 0;
+  animation: fadeInUp 0.8s ease 0.6s forwards;
+}
+
+.hero-cta .btn {
+  font-size: 1.3rem;
+  padding: 1rem 2.5rem;
+  animation: pulse 3s ease-in-out infinite;
+}
+
+/* Hand-drawn arrow */
+.hero-arrow {
+  position: absolute;
+  bottom: -50px;
+  right: -90px;
+  transform: rotate(10deg);
+  opacity: 0;
+  animation: fadeIn 0.8s ease 1.2s forwards;
+}
+
+/* Bouncing deco circle */
+.deco-bouncing-circle {
+  position: absolute;
+  top: 20%;
+  right: 8%;
+  width: 50px;
+  height: 50px;
+  border: 3px dashed var(--accent);
+  border-radius: 50%;
+  animation: bounce3d 3s ease-in-out infinite;
+  opacity: 0.25;
+}
+
+/* Scroll hint */
+.hero-scroll-hint {
+  position: absolute;
+  bottom: var(--space-lg);
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-xs);
+  color: rgba(45, 45, 45, 0.4);
+  font-family: 'Patrick Hand', cursive;
+  font-size: 1rem;
+  animation: fadeIn 1s ease 1.5s forwards;
+  opacity: 0;
+}
+
+/* ---------- Surprise Grid ---------- */
+.surprise-section {
+  padding: var(--space-2xl) 0 var(--space-3xl);
+}
+
+.surprise-section .section-title {
+  text-align: center;
+  margin-bottom: var(--space-xs);
+  font-family: 'Kalam', cursive;
+}
+
+.surprise-section .section-subtitle {
+  text-align: center;
+  color: rgba(45, 45, 45, 0.6);
+  font-size: 1.15rem;
+  margin-bottom: var(--space-xl);
+  font-family: 'Patrick Hand', cursive;
+}
+
+.surprise-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-lg);
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.surprise-card {
+  padding: var(--space-lg) var(--space-md);
+  text-align: center;
+  cursor: pointer;
+  position: relative;
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-sm);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.surprise-card:hover {
+  transform: rotate(0deg) translateY(-5px) !important;
+  box-shadow: var(--shadow-hard);
+}
+
+/* Tape decoration on cards */
+.tape-deco {
+  position: absolute;
+  top: -6px;
+  left: 50%;
+  transform: translateX(-50%) rotate(-3deg);
+  width: 70px;
+  height: 20px;
+  background: rgba(200, 200, 190, 0.55);
+  border-radius: 2px;
+  z-index: 2;
+}
+
+/* Tack decoration on cards */
+.tack-deco {
+  position: absolute;
+  top: -7px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 14px;
+  height: 14px;
+  background: var(--accent);
+  border-radius: 50%;
+  border: 2px solid var(--border);
+  z-index: 2;
+  box-shadow: 1px 1px 0px var(--border);
+}
+
+.surprise-card .card-icon {
+  font-size: 2.8rem;
+  margin-bottom: var(--space-2xs);
+  transition: transform 0.15s ease;
+  position: relative;
+  z-index: 2;
+}
+
+.surprise-card:hover .card-icon {
+  transform: scale(1.15) rotate(-5deg);
+}
+
+.surprise-card .card-title {
+  font-family: 'Kalam', cursive;
+  font-weight: 700;
+  font-size: 1.15rem;
+  color: var(--fg);
+  position: relative;
+  z-index: 2;
+}
+
+.surprise-card .card-desc {
+  font-size: 1rem;
+  color: rgba(45, 45, 45, 0.6);
+  line-height: 1.5;
+  position: relative;
+  z-index: 2;
+}
+
+.surprise-card .card-arrow {
+  margin-top: auto;
+  font-size: 1.4rem;
+  font-family: 'Kalam', cursive;
+  color: var(--accent);
+  opacity: 0;
+  transform: translateY(8px);
+  transition: all 0.15s ease;
+  position: relative;
+  z-index: 2;
+}
+
+.surprise-card:hover .card-arrow {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 768px) {
+  .surprise-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-md);
+  }
+
+  .hero-emoji {
+    font-size: 3.5rem;
+  }
+
+  .hero-arrow,
+  .deco-bouncing-circle {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .surprise-grid {
+    grid-template-columns: 1fr;
+    max-width: 320px;
+  }
+
+  .hero {
+    padding: var(--space-xl) var(--space-sm);
+  }
+}

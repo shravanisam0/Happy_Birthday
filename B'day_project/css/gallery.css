@@ -1,0 +1,453 @@
+/* ============================================
+   GALLERY.CSS — Hand-Drawn Photo Gallery
+   ============================================ */
+
+.gallery-page {
+  min-height: 100vh;
+  padding: calc(80px + var(--space-xl)) var(--space-md) var(--space-2xl);
+}
+
+.gallery-header {
+  text-align: center;
+  margin-bottom: var(--space-xl);
+}
+
+.gallery-header h1 {
+  font-family: 'Kalam', cursive;
+  font-weight: 700;
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  margin-bottom: var(--space-xs);
+  color: var(--fg);
+}
+
+.gallery-header p {
+  color: rgba(45, 45, 45, 0.6);
+  font-size: 1.15rem;
+  max-width: 500px;
+  margin: 0 auto;
+  font-family: 'Patrick Hand', cursive;
+}
+
+/* ---------- Timeline (Hand-Drawn) ---------- */
+.timeline-section {
+  max-width: 900px;
+  margin: 0 auto var(--space-2xl);
+}
+
+.timeline {
+  position: relative;
+  padding: var(--space-md) 0;
+}
+
+/* Dashed pen-drawn timeline line */
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 0;
+  bottom: 0;
+  width: 0;
+  border-left: 3px dashed var(--border);
+  opacity: 0.3;
+}
+
+.timeline-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: var(--space-xl);
+  position: relative;
+}
+
+.timeline-item:nth-child(odd) {
+  flex-direction: row;
+}
+
+.timeline-item:nth-child(even) {
+  flex-direction: row-reverse;
+}
+
+.timeline-content {
+  width: 45%;
+  padding: var(--space-md);
+  background: var(--white);
+  border: 2px solid var(--border);
+  border-radius: var(--radius-wobbly-sm);
+  box-shadow: var(--shadow-hard-sm);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.timeline-content:hover {
+  transform: rotate(-1deg);
+  box-shadow: var(--shadow-hard);
+}
+
+/* Hand-drawn wobbly dots */
+.timeline-dot {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: var(--accent);
+  border: 3px solid var(--border);
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+  box-shadow: 2px 2px 0px var(--border);
+}
+
+.timeline-item:nth-child(2) .timeline-dot { background: var(--accent-blue); }
+.timeline-item:nth-child(3) .timeline-dot { background: var(--postit); }
+.timeline-item:nth-child(4) .timeline-dot { background: #b3e6d4; }
+
+.timeline-year {
+  font-family: 'Kalam', cursive;
+  font-weight: 700;
+  font-size: 1.3rem;
+  color: var(--accent);
+  margin-bottom: var(--space-2xs);
+}
+
+.timeline-text {
+  font-size: 1rem;
+  color: var(--fg);
+  line-height: 1.6;
+  font-family: 'Patrick Hand', cursive;
+}
+
+/* ---------- Polaroid Gallery (Scrapbook) ---------- */
+.polaroid-section {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.polaroid-section h2 {
+  text-align: center;
+  font-family: 'Kalam', cursive;
+  font-weight: 700;
+  font-size: clamp(1.5rem, 3vw, 2.2rem);
+  margin-bottom: var(--space-xl);
+  color: var(--fg);
+}
+
+.polaroid-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-lg);
+}
+
+.polaroid {
+  background: var(--white);
+  padding: 12px 12px 50px 12px;
+  border: 3px solid var(--border);
+  border-radius: var(--radius-wobbly-sm);
+  box-shadow: var(--shadow-hard);
+  transform: rotate(var(--rotation, 0deg));
+  transition: all 0.15s ease;
+  cursor: pointer;
+  position: relative;
+}
+
+.polaroid:nth-child(1) { --rotation: -3deg; }
+.polaroid:nth-child(2) { --rotation: 2deg; }
+.polaroid:nth-child(3) { --rotation: -1.5deg; }
+.polaroid:nth-child(4) { --rotation: 2.5deg; }
+.polaroid:nth-child(5) { --rotation: -2deg; }
+.polaroid:nth-child(6) { --rotation: 1deg; }
+
+.polaroid:hover {
+  transform: rotate(0deg) scale(1.04) translateY(-5px);
+  box-shadow: var(--shadow-hard-lg);
+  z-index: 10;
+}
+
+/* Tape on top of polaroid */
+.polaroid-tape {
+  position: absolute;
+  top: -8px;
+  left: 50%;
+  transform: translateX(-50%) rotate(-2deg);
+  width: 60px;
+  height: 18px;
+  background: rgba(200, 200, 190, 0.55);
+  border-radius: 2px;
+  z-index: 3;
+}
+
+.polaroid-image,
+.polaroid-img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border: 2px solid var(--border);
+  border-radius: 2px;
+  display: block;
+}
+
+.polaroid-placeholder {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  border: 2px dashed var(--muted);
+  border-radius: 2px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-xs);
+  font-size: 0.95rem;
+  color: rgba(45, 45, 45, 0.4);
+  background: rgba(229, 224, 216, 0.2);
+}
+
+.polaroid-placeholder .placeholder-icon {
+  font-size: 2rem;
+  opacity: 0.4;
+}
+
+.polaroid-placeholder .placeholder-text {
+  font-size: 0.8rem;
+  font-family: 'Patrick Hand', cursive;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: rgba(45, 45, 45, 0.35);
+}
+
+.polaroid-caption {
+  position: absolute;
+  bottom: 10px;
+  left: 12px;
+  right: 12px;
+  text-align: center;
+  font-family: 'Kalam', cursive;
+  font-weight: 700;
+  font-size: 1rem;
+  color: var(--fg);
+  padding-top: 8px;
+}
+
+/* ---------- Video Polaroid ---------- */
+.video-thumbnail {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.video-thumbnail video.polaroid-img {
+  pointer-events: none;
+}
+
+.video-play-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.25);
+  transition: background 0.2s ease;
+  border: 2px solid var(--border);
+  border-radius: 2px;
+}
+
+.polaroid-video:hover .video-play-overlay {
+  background: rgba(0, 0, 0, 0.15);
+}
+
+.play-icon {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.9);
+  border: 3px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  color: var(--fg);
+  box-shadow: 2px 2px 0px var(--border);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.polaroid-video:hover .play-icon {
+  transform: scale(1.1);
+  box-shadow: 3px 3px 0px var(--border);
+}
+
+/* Lightbox Video */
+.lightbox-video {
+  width: 100%;
+  max-height: 60vh;
+  border: 2px solid var(--border);
+  border-radius: 2px;
+  outline: none;
+  background: #000;
+}
+
+/* ---------- Lightbox (Sketch Style) ---------- */
+.lightbox-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(253, 251, 247, 0.92);
+  z-index: var(--z-modal);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.lightbox-overlay.active {
+  display: flex;
+  opacity: 1;
+}
+
+.lightbox-content {
+  max-width: 700px;
+  width: 90%;
+  text-align: center;
+}
+
+.lightbox-image-container {
+  position: relative;
+  background: var(--white);
+  padding: 16px 16px 60px 16px;
+  border: 3px solid var(--border);
+  border-radius: var(--radius-wobbly-sm);
+  box-shadow: var(--shadow-hard-lg);
+}
+
+.lightbox-image {
+  width: 100%;
+  max-height: 60vh;
+  object-fit: contain;
+  border: 2px solid var(--border);
+  border-radius: 2px;
+}
+
+.lightbox-placeholder {
+  width: 100%;
+  height: 350px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-sm);
+  font-size: 1.1rem;
+  color: rgba(45, 45, 45, 0.4);
+  font-family: 'Patrick Hand', cursive;
+  border: 2px dashed var(--muted);
+}
+
+.lightbox-placeholder .placeholder-icon {
+  font-size: 3rem;
+}
+
+.lightbox-caption {
+  position: absolute;
+  bottom: 16px;
+  left: 16px;
+  right: 16px;
+  font-family: 'Kalam', cursive;
+  font-weight: 700;
+  font-size: 1.2rem;
+  color: var(--fg);
+  text-align: center;
+}
+
+/* Tack-style close button */
+.lightbox-close {
+  position: absolute;
+  top: -12px;
+  right: -12px;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--accent);
+  color: var(--white);
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border: 3px solid var(--border);
+  box-shadow: 2px 2px 0px var(--border);
+  transition: all 0.1s ease;
+}
+
+.lightbox-close:hover {
+  transform: scale(1.1) rotate(-5deg);
+}
+
+.lightbox-close:active {
+  box-shadow: 0px 0px 0px var(--border);
+  transform: translate(2px, 2px);
+}
+
+.lightbox-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--white);
+  border: 3px solid var(--border);
+  color: var(--fg);
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 2px 2px 0px var(--border);
+  transition: all 0.1s ease;
+  font-family: 'Kalam', cursive;
+}
+
+.lightbox-nav:hover {
+  background: var(--postit);
+  transform: translateY(-50%) rotate(-3deg);
+}
+
+.lightbox-nav:active {
+  box-shadow: 0px 0px 0px var(--border);
+  transform: translateY(-50%) translate(2px, 2px);
+}
+
+.lightbox-prev { left: -50px; }
+.lightbox-next { right: -50px; }
+
+/* ---------- Responsive ---------- */
+@media (max-width: 768px) {
+  .polaroid-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-md);
+  }
+
+  .timeline::before {
+    left: 20px;
+  }
+
+  .timeline-item,
+  .timeline-item:nth-child(even) {
+    flex-direction: row;
+    padding-left: 50px;
+  }
+
+  .timeline-content {
+    width: 100%;
+  }
+
+  .timeline-dot {
+    left: 20px;
+  }
+
+  .lightbox-prev { left: -10px; }
+  .lightbox-next { right: -10px; }
+}
+
+@media (max-width: 480px) {
+  .polaroid-grid {
+    grid-template-columns: 1fr;
+    max-width: 280px;
+    margin: 0 auto;
+  }
+}

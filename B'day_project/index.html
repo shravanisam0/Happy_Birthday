@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+    content="A magical birthday surprise crafted just for you — full of love, memories, and celebration.">
+  <title>🎂 Happy Birthday!</title>
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/home.css">
+</head>
+
+<body>
+
+  <!-- Page Transition -->
+  <div class="page-transition-overlay"></div>
+
+  <!-- Doodle Canvas -->
+  <canvas id="doodle-canvas"></canvas>
+
+  <!-- Navigation -->
+  <nav class="main-nav">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">
+        <span class="logo-icon">🎂</span>
+        <span>Birthday</span>
+      </a>
+      <div class="nav-links">
+        <a href="index.html" class="nav-link active">Home</a>
+        <a href="message.html" class="nav-link">Message</a>
+        <a href="gallery.html" class="nav-link">Memories</a>
+        <a href="reasons.html" class="nav-link">Reasons</a>
+        <a href="gift.html" class="nav-link">Gift</a>
+        <a href="celebration.html" class="nav-link">Celebrate</a>
+      </div>
+      <button class="hamburger" aria-label="Toggle navigation menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile Nav Overlay -->
+  <div class="mobile-nav-overlay">
+    <a href="index.html" class="nav-link">🏠 Home</a>
+    <a href="message.html" class="nav-link">💌 Message</a>
+    <a href="gallery.html" class="nav-link">📸 Memories</a>
+    <a href="reasons.html" class="nav-link">💝 Reasons</a>
+    <a href="gift.html" class="nav-link">🎁 Gift</a>
+    <a href="celebration.html" class="nav-link">🎉 Celebrate</a>
+  </div>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-content">
+      <div class="hero-emoji">🎂</div>
+      <h1 class="hero-title">
+        Happy Birthday,<br>
+        <span class="name-highlight">Raksha</span><span class="rotating-mark">❤️</span>!
+      </h1>
+      <p class="hero-subtitle">
+        Today is all about you — the amazing, incredible, one-of-a-kind person
+        who makes the world a better place just by being in it.
+        I've prepared something special. 💝
+      </p>
+      <div class="hero-cta">
+        <button id="open-surprise-btn" class="btn btn-primary btn-lg">
+          ✨ Open Your Surprise
+        </button>
+      </div>
+      <!-- Hand-drawn arrow pointing to CTA (desktop only) -->
+      <div class="hero-arrow" aria-hidden="true">
+        <svg width="80" height="60" viewBox="0 0 80 60" fill="none">
+          <path d="M5 50 Q 20 10, 55 20 T 75 15" stroke="#2d2d2d" stroke-width="2.5" fill="none" stroke-dasharray="6 4" />
+          <path d="M70 8 L 78 15 L 68 20" stroke="#2d2d2d" stroke-width="2.5" fill="none" stroke-linecap="round" />
+        </svg>
+      </div>
+    </div>
+
+    <!-- Bouncing doodle circle (desktop only) -->
+    <div class="deco-bouncing-circle" aria-hidden="true"></div>
+
+    <div class="hero-scroll-hint">
+      <span>Scroll to explore ↓</span>
+    </div>
+  </section>
+
+  <!-- Surprise Grid Section -->
+  <section class="surprise-section section">
+    <div class="container">
+      <h2 class="heading-2 section-title">Your Birthday Surprises</h2>
+      <p class="section-subtitle">Each card holds something special — click to explore ✨</p>
+
+      <div class="surprise-grid">
+        <a href="message.html" class="surprise-card postit-card" style="transform: rotate(-2deg);">
+          <div class="tape-deco" aria-hidden="true"></div>
+          <div class="card-icon">💌</div>
+          <h3 class="card-title">Birthday Message</h3>
+          <p class="card-desc">A heartfelt letter written just for you</p>
+          <span class="card-arrow">→</span>
+        </a>
+
+        <a href="gallery.html" class="surprise-card postit-card" style="transform: rotate(1.5deg);">
+          <div class="tape-deco" aria-hidden="true"></div>
+          <div class="card-icon">📸</div>
+          <h3 class="card-title">Our Memories</h3>
+          <p class="card-desc">A scrapbook of our favorite moments</p>
+          <span class="card-arrow">→</span>
+        </a>
+
+        <a href="reasons.html" class="surprise-card postit-card" style="transform: rotate(-1deg);">
+          <div class="tack-deco" aria-hidden="true"></div>
+          <div class="card-icon">💝</div>
+          <h3 class="card-title">Why You're Amazing</h3>
+          <p class="card-desc">Reasons we adore you, one card at a time</p>
+          <span class="card-arrow">→</span>
+        </a>
+
+        <a href="gift.html" class="surprise-card postit-card" style="transform: rotate(2deg);">
+          <div class="tack-deco" aria-hidden="true"></div>
+          <div class="card-icon">🎁</div>
+          <h3 class="card-title">Your Gift</h3>
+          <p class="card-desc">A surprise waiting to be unwrapped</p>
+          <span class="card-arrow">→</span>
+        </a>
+
+        <a href="celebration.html" class="surprise-card postit-card" style="transform: rotate(-1.5deg);">
+          <div class="tape-deco" aria-hidden="true"></div>
+          <div class="card-icon">🎆</div>
+          <h3 class="card-title">Grand Finale</h3>
+          <p class="card-desc">Fireworks and celebration await you</p>
+          <span class="card-arrow">→</span>
+        </a>
+
+        <a href="message.html" class="surprise-card postit-card" style="transform: rotate(1deg);">
+          <div class="tape-deco" aria-hidden="true"></div>
+          <div class="card-icon">🎂</div>
+          <h3 class="card-title">Make a Wish</h3>
+          <p class="card-desc">Blow out the candles and make a wish</p>
+          <span class="card-arrow">→</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+
+  <script src="js/particles.js"></script>
+  <script src="js/navigation.js"></script>
+  <script src="js/home.js"></script>
+</body>
+
+</html>
